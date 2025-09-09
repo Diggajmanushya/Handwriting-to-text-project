@@ -1,0 +1,10 @@
+# Virtual environment folder
+venv/
+
+# Python bytecode files
+_pycache_/
+
+# Image files that are not part of the source code
+*.png
+*.jpg
+*.jpeg
