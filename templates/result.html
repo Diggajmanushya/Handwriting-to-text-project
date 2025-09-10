@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OCR Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Extracted Text</h1>
+        <pre class="extracted-text">{{ extracted_text }}</pre>
+        <a href="{{ url_for('upload_file') }}">Upload another image</a>
+    </div>
+</body>
+</html>
