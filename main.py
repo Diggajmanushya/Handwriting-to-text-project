@@ -8,7 +8,7 @@ from PIL import Image
 import cv2
 
 # IMPORTANT: If Tesseract is not in your system PATH, you need to set the path here.
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract' # Update this path as necessary
 
 # --- Step 1: Preprocess the Image ---
 # Put an image of a handwritten note in the same folder as this script.
