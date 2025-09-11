@@ -7,7 +7,7 @@ from werkzeug.utils import secure_filename
 
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key_here'  # Replace with a secure secret key
+app.secret_key = os.environ.get('SECRET_KEY', 'default_secret_key')
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # Max 16MB upload
 
