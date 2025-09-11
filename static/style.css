@@ -1,72 +1,193 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-
-.container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 500px;
-    width: 100%;
-}
-
-h1 {
     color: #333;
 }
 
+/* Container for the app */
+.container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    padding: 40px 50px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #222;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Form styles */
 form {
-    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 input[type="file"] {
-    margin: 10px 0;
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    flex-grow: 1;
+    max-width: 300px;
 }
 
+input[type="file"]:focus,
+input[type="file"]:hover {
+    border-color: #9013fe;
+    outline: none;
+}
+
+/* Button styles */
 button {
-    background-color: #4CAF50;
+    background: linear-gradient(45deg, #9013fe, #4a90e2);
     color: white;
-    padding: 10px 20px;
+    padding: 14px 30px;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(144, 19, 254, 0.6);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    min-width: 140px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background: linear-gradient(45deg, #4a90e2, #9013fe);
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.8);
+    transform: translateY(-3px);
 }
 
+/* Error message */
 .error {
-    color: red;
-    margin-top: 10px;
+    color: #e74c3c;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
+/* Extracted text display */
 .extracted-text {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 20px;
+    border-radius: 12px;
     text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
+    color: #222;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
 }
 
+/* Link styles */
 a {
     display: inline-block;
-    margin-top: 20px;
-    color: #4CAF50;
+    margin-top: 25px;
+    color: #4a90e2;
     text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #9013fe;
+    transform: translateX(5px);
+}
+
+/* History container */
+.history-container {
+    margin-top: 35px;
+    max-height: 280px;
+    overflow-y: auto;
+    background: #f0f0f0;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    color: #444;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.history-container h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.history-item {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ddd;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    input[type="file"] {
+        max-width: 100%;
+        flex-grow: unset;
+    }
+
+    button {
+        min-width: 100%;
+    }
 }
